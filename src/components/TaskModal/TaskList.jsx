@@ -5,7 +5,7 @@ import TaskModal from './TaskModal';
 import axios from 'axios';
 
 import './taskmodal.css';
-import 'C:/Users/A00201540/Documents/TaskBoard/taskboard/src/components/TaskCards/card.css';
+import 'C:/Users/ajame/Documents/taskboard2/taskboard2/src/components/TaskCards/card.css';
 import DetailedTaskModal from './DetailedModal';
 
 
