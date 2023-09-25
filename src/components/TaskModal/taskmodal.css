@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+@media screen and (max-width: 5000px ) {
+  
+
+#createTaskBtn {
+    position: fixed;
+    padding: 10px;   
+    top: 10px;
+    right: 12px;
+    justify-content: center;
+    border-radius: 20px;
+    border-width: 0px;
+    color: white;
+    box-shadow: 0px 2px 10px 1.3px rgba(0,0,0, 0.5);
+    background-color: #ff6e1e;
+    z-index: 10000;
+
+    cursor:pointer;
+}
+
+#createTaskBtn:hover {
+    background-color: rgb(196, 81, 24);
+    overflow:hidden;
+    transition-duration: .5s;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+    
+}
+
+
+.modal-content {
+    position: absolute;
+
+	background-color: #fefefe;
+	margin: 15% auto ;
+	border: 1px solid #888;
+	width: 30%;
+    height: 85%;
+    border-radius: 30px;
+    padding-top: 20px;
+    top: -220px;
+    left: 500px;
+    right: 500px;
+}
+
+#taskForm{
+position:relative;
+margin-top: -5  5px;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 6px;
+}
+
+.modalBtn{
+    border-radius: 20px;
+    border-width: 0px;
+	font-family: 'Muli', sans-serif;
+    color: white;
+    box-shadow: 0px 2px 10px 1.3px rgba(0,0,0, 0.5);
+    background-color: #ff6e1e;
+    padding: 10px;
+    top: 20px;
+    position: relative;
+    margin-left: 35%;
+    margin-right: 35%;
+    z-index: 1000;
+    
+    cursor:pointer;
+
+}
+
+.createTitle{
+    position: relative;
+    left: 29%;
+    right: 32%;
+
+}
+
+
+#taskForm input {
+    
+    border-radius: 5px;
+    border-width: 1.3px;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 130%;
+
+}
+
+#taskForm select {
+    border-radius: 5px;
+    border-width: 1.3px;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 115%;
+}
+
+
+#taskForm label {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#taskForm textarea {
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 1.3px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.close{
+    position: relative;
+    margin-right: -30%;
+    margin-top: -2%;
+    cursor: pointer;
+    z-index: 100001;
+}
+
+
+.tasks-container{
+    background-color: #ff6e1e;
+    position:absolute;
+    right: -196px;
+    /*height: 122.9210111%;*/
+    height: 789.2455px;
+    max-height: 850.2455px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 50%;
+    top: -90px;
+    border-radius: 0% 30px 30px 0%;
+    box-sizing: border-box;
+    color:white;
+    padding-top:10px;
+    padding-bottom: 20px;
+}
+.tasks-container h2{
+    position: relative;
+    margin: 5px;
+    left: 80px;
+    top: 25px;
+    margin-bottom: 53px;
+}
+
+.tasks-container input{
+    margin-bottom: 15px;
+    position: relative;
+    left: -13px;
+}
+
+.tasks-container label{
+    left: -13px;
+    position: relative;
+}
+.taskBtn{
+    border-radius: 20px;
+    border-width: 0px;
+	font-family: 'Muli', sans-serif;
+    color: black;
+    box-shadow: 0px 2px 10px 1.3px rgba(0,0,0, 0.5);
+    background-color: white;
+    padding: 10px;
+    top: 20px;
+    position: relative;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 35px;
+    cursor:pointer;
+
+}
+
+.tasks-container::-webkit-scrollbar {
+	width: 10px;               /* width of the entire scrollbar */
+  }
+  
+  
+  .tasks-container::-webkit-scrollbar-thumb {
+	background-color: white;    /* color of the scroll thumb */
+	border-radius: 20px;       /* roundness of the scroll thumb */
+	border: px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+  }
+
+  .modal::-webkit-scrollbar {
+	width: 10px;               /* width of the entire scrollbar */
+  }
+  .modal::-webkit-scrollbar-track {
+	background: transparent;        /* color of the tracking area */
+  }
+  
+  .modal::-webkit-scrollbar-thumb {
+	background-color: #cccccc;    /* color of the scroll thumb */
+	border-radius: 20px;       /* roundness of the scroll thumb */
+	border: px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+  }
+  
+  .detailed-card{
+    position: absolute;
+	background-color: #fff;
+	margin: 15% auto ;
+	border: 1px solid #888;
+    height: 70%;
+    width: 60%;
+    border-radius: 30px;
+    top: -150px;
+    left: 300px;
+    right: 300px;
+    
+}
+
+.large-card-preview {
+	background-color: #ff6e1e;
+	color: #fff;
+	padding: 26px;
+    padding-top: 25px;
+    margin-left: -12px;
+	width: 25%;
+    height: 100%;
+    border-radius: 30px 0% 0% 30px;
+}
+
+
+.department {
+	opacity: 0.6;
+    z-index: 10001;
+	letter-spacing: 1px;
+    font-size: 12px;
+    position: absolute;
+    top: -2%;
+    left: .2%;
+    
+}
+
+.contact-info h6 {
+	margin-left: -40px;
+	margin-bottom: -10px;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.big-card{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.detailed-card .close {
+    margin-right: 50px;
+    margin-top: 5px;
+}
+.big-card h6{
+    opacity: 0.6;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.big-card h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+
+}
+
+.big-card .department-title {
+	position:absolute;
+	word-wrap:break-word;
+	width: 12em;
+    font-size: 25px;
+
+}
+
+/* CONTACT INFORMATION */
+
+.big-card .contact-info{
+	margin-top: 130px;
+	margin-bottom: -25px;
+	margin-left: 50px;
+}
+.big-card .contact-info h6 {
+	margin-left: -40px;
+	margin-bottom: -10px;
+	font-style: italic;
+    font-size: 16px;
+}
+.big-card .contact-info h4 {
+	margin-left: -20px;
+	margin-bottom: 10px;
+	margin-top: 13px;
+	font-size: 15px;
+
+
+}
+.big-card .contact-info h5 {
+	margin-left: -20px;
+	margin-bottom: 10px;
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+.big-card .close{
+    right: -30px;
+    top: 5px;
+}
+
+
+.big-card .card-info {
+	padding: 30px;
+    display: inline-block;
+    word-wrap: break;
+    bottom: 620px;
+    width: 50em;
+    left: 270px;
+}
+
+.big-card .card-info h2 {
+    font-size: 30px;
+}
+
+.big-card .card-info h6 {
+    font-size: 18px;
+}
+
+
+.big-card .progress-container {
+    position: absolute;
+    top: 0px;
+    left: 80%;
+}
+
+/* TASK LIST */
+
+.task-text.completed{
+    text-decoration: line-through;
+}
+
+.task-list{
+    position:relative;
+    margin-top: 20px;
+    font-size: 18px;
+    height: 450px;
+    max-height: 400px;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
+
+.task-item{
+   display: flex;
+   align-items:center;
+   position: relative;
+   z-index: 1;
+   margin-bottom: 20px;
+}
+
+
+.circle{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ff6e1e;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
+
+    margin-right: 10px;
+}
+.circle.completed {
+    background-color: #ff6e1e;
+    border: 1px solid #ff6e1e;
+}
+.circle.completed::after{
+    content: "";
+    width: 2px;
+    background-color: #ff6e1e;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    transition: bottom 0.5s;
+    animation: drawLine 0.5s forwards;
+}
+
+.taskCompleteBtn {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    border: 3px solid #ff6e1e;
+    border-radius: 32px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
+    margin-right: 15px;
+}
+
+.taskCompleteBtn::after{
+
+    background-color: #ff6e1e;
+
+}
+
+@keyframes drawLine {
+    from {
+        bottom: 0%;
+    }
+    to {
+        bottom: calc(100% - 45px);
+    }
+}
+
+.task-list::-webkit-scrollbar {
+	width: 13px;               /* width of the entire scrollbar */
+  }
+  
+.task-list::-webkit-scrollbar-track {
+	background: #cccccc;        /* color of the tracking area */
+    border-radius: 20px;
+  }
+  
+.task-list::-webkit-scrollbar-thumb {
+	background-color: #ff6e1e;    /* color of the scroll thumb */
+	border-radius: 20px;       /* roundness of the scroll thumb */
+	border: 3px solid #ff6e1e;  /* creates padding around scroll thumb */
+  }
+
+  /*PIN BOX*/
+
+  .pinBox{
+    position: relative;
+    bottom: 390px;
+    left: 1080px;
+    transform: scale(200%);
+    justify-content: center;
+  }
+  .pinBox input{
+    border-radius: 5px;
+    border-width: 1.3px;
+    border-width: 1px;
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    margin-top: 5px;
+    margin-left: 50px;
+  }
+  .pinBox label h6{
+    position:relative;
+    margin-bottom: -20px;
+    left: 45px;
+    color: black;
+    opacity: .9;
+  }
+  .pinBox button {
+    position:relative;
+    left: 60px;
+    top: 5px;
+    padding: 5px;   
+    justify-content: center;
+    border-radius: 20px;
+    border-width: 0px;
+    color: white;
+    box-shadow: 0px 2px 4px .1px rgba(0,0,0, 0.5);
+    background-color: #ff6e1e;
+    z-index: 10000;
+
+  }
+  .pinBox button h5{
+    margin: 1px;
+  }
+}
+
+@media screen and (max-width: 1300px){
+	
+        .modal-content{
+            position: absolute;
+            margin: 15% auto ;
+            width: 40%;
+            height: 138vh;
+            top: -150px;
+            left: 265px;
+            right: 400px;
+        }
+
+        .createTitle{
+            margin-left: -3%;
+            margin-right: -3%;
+        }
+
+        .tasks-container {
+            height: 119.8%;
+            top: -90.2px;
+        }
+
+        .big-card .contact-info{
+            margin-top: 100px;
+            margin-bottom: -25px;
+            margin-left: 40px;
+        }
+
+        .big-card{
+            width: 140%;
+            height: 130%;
+            left: -17%;
+            top: -17%;;
+        }
+
+        .big-card .card-info {
+            padding: 30px;
+            bottom: 500px;
+            width: 50em;
+            left: 250px;
+        }
+
+        .big-card .progress-container {
+            position: absolute;
+            top: 0px;
+            left: 75%;
+        }
+
+        .task-list{
+            position:relative;
+            margin-top: 40px;
+            font-size: 18px;
+            height: 450px;
+            max-height: 300px;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+        }
+
+        .pinBox{
+            position: relative;
+            bottom: 320px;
+            left: 1010px;
+        }
+}
+
+
+/* DETAILED TASKCARD MODAL */
+
+
+
+  
